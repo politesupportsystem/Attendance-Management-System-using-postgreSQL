@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>勤怠管理システム</title>
+        <link rel="stylesheet" type="text/css" href="../views/style.css">
+    </head>
+    <body>
+        <div class="header">
+            <p>勤怠管理システム</p>
+        </div>
+        <div class="inner">
+            <div class="form_wrapper">
+                <form action="/create" method="POST">
+                    <div class="field">
+                    <span>ユーザーID:</span><input type="number" name="userid" min="0" value="userid" class="user_number">
+                    </div>
+                    <div class="field">
+                    <input type="datetime-local" name="workdatetime" class="time_text">
+                    </div>
+                    <div class="radio_button">
+                    <input type="radio" name="timetype" value="attendance"><span>出勤</span>
+                    </div>
+                    <div class="radio_button">
+                    <input type="radio" name="timetype" value="leave"><span>退勤</span>
+                    </div>
+                    <div class="field">
+                    <input type="submit" value="送信" class="button">
+                    </div>
+                </form>
+            </div>
+        
+            <div class="data-wrapper">
+                {{ range .}}
+                    <ul>
+                        <li>ID: {{ .UserId }}</li>
+                        <li>{{ .WorkdateTime.Format "15:04" }}</li>
+                        <li><a href="/edit?id={{ .Id }}">Edit</a></li>
+                    </ul>
+                {{ end }}
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+/*全体*/
+* {
+    box-sizing: border-box;
+}
+
+html,
+body,
+ul,
+li,
+h3,
+p,
+div {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    color: #3b4043;
+}
+
+li {
+    list-style: none;
+}
+
+.header {
+    background-color: #f1f8fe;
+    margin-bottom: 48px;
+    padding: 20px 0;
+}
+
+p {
+    text-align: center;
+}
+
+.inner {
+    padding: 0 10vh;
+}
+
+h3 {
+    position: absolute;
+    left: 10px;
+}
+/*フォーム*/
+
+.form_wrapper {
+    margin-bottom: 35px;
+    position: relative;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+span {
+    font-size: 12px;
+}
+
+.field {
+    margin: 10px 10px;
+}
+
+.user_number {
+    width: 67px;
+}
+
+input[type="number"] {
+    font-family: sans-serif;
+    border: 1px #3afa solid;
+    border-radius: 3px;
+}
+
+input[type="datetime-local"] {
+    padding: 1px;
+    text-align: center;
+    font-family: sans-serif;
+    border: 1px #3afa solid;
+    border-radius: 3px;
+}
+
+.radio_button {
+    margin: 10px 2px;
+}
+
+.button {
+    display: inline-block;
+    padding: 0.4em 1.6em;
+    font-size: 0.8em;
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    background: #87CE;
+    border: 1px #87CE solid;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}
+
+/*出退勤データ*/
+
+.data-wrapper {
+    margin-bottom: 25px;
+}
+
+ul {
+    display: flex;
+}
+
+li {
+    padding: 10px;
+}
+
+a {
+    padding: 3px 9px;
+    margin-left: 10px;
+    display: inline-block;
+    font-size: 0.8em;
+    color: #fff;
+    text-decoration: none;
+    user-select: none;
+    background: #87CE;
+    border: 1px #87CE solid;
+    border-radius: 3px;
+    transition: 0.2s ease;
+}

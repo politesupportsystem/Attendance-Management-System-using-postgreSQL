@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>勤怠管理システム</title>
+        <link rel="stylesheet" type="text/css" href="../views/style.css">
+    </head>
+    <body>
+        <div class="header">
+        </div>
+        <div class="inner">
+            <div class="data-wrapper">
+                <ul>
+                    <li><span>修正前: </span>{{ .WorkdateTime.Format "15:04" }}</li>
+                </ul>
+            </div>
+            <div class="form_wrapper">
+                <h3>勤怠の修正</h3>
+                <br>
+                <form action="/update?id={{.Id}}" method="POST">
+                    <div class="field">
+                    <input type="datetime-local" name="workdatetime" value="2023-01-20T00:00" class="time_text">
+                    </div>
+                    <div class="radio_button">
+                    <input type="radio" name="timetype" value="attendance"><span>出勤</span>
+                    </div>
+                    <div class="radio_button">
+                    <input type="radio" name="timetype" value="leave"><span>退勤</span>
+                    </div>
+                    <div class="field">
+                    <input type="submit" value="変更する" class="button">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
