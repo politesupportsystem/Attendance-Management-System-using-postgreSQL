@@ -29,7 +29,7 @@ type WorkItem struct {
 
 // サーバーに接続したら、それぞれの関数に振り分ける
 func main() {
-	http.Handle("/views/", http.StripPrefix("/views/", http.FileServer(http.Dir("../views/"))))
+	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("static"))))
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = "8080"
@@ -107,7 +107,7 @@ type IndexData struct {
 
 // index.htmlに表示するデータを指定する
 func Index(w http.ResponseWriter, r *http.Request) {
-	tmpl, err := template.ParseFiles("../templates/index.html")
+	tmpl, err := template.ParseFiles("templates/index.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -181,7 +181,7 @@ func WorkItemEdit(w http.ResponseWriter, r *http.Request) {
 		EditRecord = item
 	}
 
-	tmpl, err := template.ParseFiles("../templates/edit.html")
+	tmpl, err := template.ParseFiles("templates/edit.html")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -189,7 +189,7 @@ func WorkItemEdit(w http.ResponseWriter, r *http.Request) {
 }
 
 func WorkItemUpdate(w http.ResponseWriter, r *http.Request) {
-	_, err := template.ParseFiles("../templates/edit.html")
+	_, err := template.ParseFiles("templates/edit.html")
 	if err != nil {
 		log.Fatal(err)
 	}
